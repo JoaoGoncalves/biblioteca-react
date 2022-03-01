@@ -1,6 +1,7 @@
 import BookList from "./BookList";
 import data from '../data.js'
 import { useState } from "react";
+import BookForm from "./BookForm";
 
 /* let arrayBooks = [
     {
@@ -34,9 +35,17 @@ export default function BookDashboard() {
     setBooks( books.filter( b => b.id !== id) );
   }
 
+  const handleAddBook = (book) => {
+    console.log(book);
+    setBooks([book, ...books]);
+  }
+
 
   return (
     <div>
+        <BookForm 
+          onFormSubmit={handleAddBook}
+        />
         <BookList 
           books={books}  
           onDelete={handleDelete}

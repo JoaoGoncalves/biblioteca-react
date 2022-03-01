@@ -8,6 +8,8 @@ export default function Book(props) {
     props.onDelete(id);
   }
 
+  
+
   return (
     <article>
         <h1>{title}</h1>
